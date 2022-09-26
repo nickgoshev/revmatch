@@ -1,12 +1,12 @@
 const Creator = require('./Creator');
 const Event = require('./Event');
 
-User.hasMany(Event, {
+Creator.hasMany(Event, {
   foreignKey: 'creator_id',
   onDelete: 'CASCADE'
 });
 
-Project.belongsTo(Creator, {
+Event.belongsTo(Creator, {
   foreignKey: 'creator_id'
 });
 
